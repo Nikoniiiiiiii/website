@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    height: 140vh;
+    width: 100%;
+    background-color: #4a9993;
+    color: #ffffff;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #f8f9fa;
+    font-size: 1rem;
+}
+a:hover {
+    color: #6c5b7b;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+header {
+    position:relative;
+    padding: 0 1rem;
+    height: 10vh;
+    background-color: #0c2c2b;
+
+}
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: #f8f9fa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn {
+    background-color: #28a745; /* Semi-transparent background */
+    color: #dadada;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent; /* Invisible border */
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.action_btn:hover {
+    background-color: #218f3b;
+    color: #F8F9FA;
+    outline: 2px solid #6C5B7B;
+    transform: scale(1.05);
+}
+
+.about-section{
+    background: url(logo2.png) no-repeat left;
+    background-size: 45%;
+    height: 500px;
+    overflow: hidden;
+    padding: 10px 50;
+}
+
+.inner-container{
+    width: 65%;
+    float: center;
+    background-color: #4a9993;
+    padding: 140px;
+    margin-left: 250px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 200px;
+}
+
+.text{
+    font-size: 23px;
+    color: #ffffff;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}

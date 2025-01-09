@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./../css/getstarted.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <title>Get Started</title>
+   
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul class="links">
+                <li><a href="">Home</a></li>
+                <li><a href="about -us.html">About</a></li>
+            </ul>
+            <a href="signup.html" class="action_btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa-regular fa-bars"></i>
+            </div>
+        </div>
+
+
+
+        <div class="content-width">
+            <div class="slideshow">
+                <!-- Slideshow Items -->
+                <div class="slideshow-items">
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img class="item-image" src="image/slide 1n.png" alt="test-image">
+                        </div>
+                        <!-- Staggered Header Elements -->
+                        <div class="item-header">
+                            <span class="vertical-part"><b>O</b></span>
+                            <span class="vertical-part"><b>R</b></span>
+                            <span class="vertical-part"><b>D</b></span>
+                            <span class="vertical-part"><b>E</b></span>
+                            <span class="vertical-part"><b>R</b></span>
+                        </div>
+                        <!-- Staggered Description Elements -->
+                        <div class="item-description">
+                            <span class="vertical-part">
+                                <b>Created to make ordering food and drinks 
+                                   in a canteen quick and easy, it provides 
+                                   a simple platform for students, employees, 
+                                   and visitors, ensuring a fast and 
+                                   convenient experience.</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img class="item-image" src="image/slide 2n.png" alt="screenshot-image">
+                        </div>
+                        <!-- Staggered Header Elements -->
+                        <div class="item-header">
+                            <span class="vertical-part"><b>N</b></span>
+                            <span class="vertical-part"><b>O</b></span>
+                            <span class="vertical-part"><b>W</b></span>
+                           
+                     
+                        </div>
+                        <!-- Staggered Description Elements -->
+                        <div class="item-description">
+                            <span class="vertical-part">
+                                <b>Made to make ordering food and drinks 
+                                   in a canteen easier, this platform is 
+                                   designed for students, employees, and 
+                                   visitors, offering a quick, efficient, 
+                                   and hassle-free ordering experience.</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img class="item-image" src="image/slide 3n.png" alt="screenshot-image">
+                        </div>
+                        <!-- Staggered Header Elements -->
+                        <!-- Staggered Description Elements -->
+                        <div class="item-description">
+                            <span class="vertical-part">
+                                <b>Designed to simplify and streamline the process of ordering food 
+                                    and beverages in a canteen environment. It offers a user-friendly 
+                                    platform that caters to students, employees, and visitors, making 
+                                    the experience of ordering meals fast, efficient, and convenient.</b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slideshow Controls -->
+                <div class="controls">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Slideshow Functionality
+        const slideshowItems = document.querySelectorAll('.item');
+        const controlsContainer = document.querySelector('.controls ul');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            // Hide all items and remove active class
+            slideshowItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+            // Update controls
+            controlsContainer.querySelectorAll('li').forEach((li, i) => {
+                li.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideshowItems.length;
+            showSlide(currentIndex);
+        }
+
+        // Create Controls
+        function createControls() {
+            slideshowItems.forEach((_, i) => {
+                const li = document.createElement('li');
+                li.addEventListener('click', () => {
+                    currentIndex = i;
+                    showSlide(currentIndex);
+                });
+                controlsContainer.appendChild(li);
+            });
+            showSlide(currentIndex); // Initialize first slide
+        }
+
+        createControls();
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+    <script src="firebaseauth.js"></script>
+    <script>
+        checkAuth(); // Ensure the user is authenticated
+    </script>
+    
+</body>
+</html>
